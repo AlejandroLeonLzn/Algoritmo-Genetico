@@ -70,6 +70,21 @@ def op_seleccion(pob,tp,nb):
             pob[i+tp+1][k]=pob[i][k]
             k=k+1
         i=i+2
+
+#....Mutacion....................................................
+def op_mutacion(pob,nb,tp):
+    num_mutaciones=int(nb/10)
+    num_mutantes=int(tp/10)
+    while(i<=num_mutantes):
+        j=np.random.randint(tp)
+        while(k<=num_mutaciones):
+            p=np.random.randint(nb)
+            if(pob[j][p]==0):
+                pob[j][p]=1
+            else:
+                pob[j][p]=0
+            k=k+1
+        i=i+1
 #....Sección principal...........................................
 num_generaciones=1
 tam_pobla=cap_num_ind()
@@ -94,3 +109,5 @@ print (poblacion)
 #una de las 3 formas de formar pareja
 #Aleatorio, elitista y vasconselos
 
+#tarea
+#Construir un programa en python que simule el automata que esta en el pizarron
